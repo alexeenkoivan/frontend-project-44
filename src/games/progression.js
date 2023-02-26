@@ -14,7 +14,7 @@ const progression = () => {
 const generatedData = () => {
   const result = progression();
   const hiddenIndex = getRandomNumber(0, progressionLength);
-  const correctAnswer = (result[hiddenIndex]).toString();
+  const correctAnswer = String(result[hiddenIndex]);
   result[hiddenIndex] = '..';
   const question = result.join(' ');
   return [question, correctAnswer];
