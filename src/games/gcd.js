@@ -1,7 +1,7 @@
 import getRandomNumber from '../getRandomNumber.js';
-import gameLogic from '../index.js';
+import letsPlay from '../index.js';
 
-const gcd = (number1, number2) => {
+const getGCD = (number1, number2) => {
   let result = 0;
   const minimalNumber = Math.min(number1, number2);
   for (let i = 0; i <= minimalNumber; i += 1) {
@@ -15,11 +15,11 @@ const generatedData = () => {
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
   const question = `${firstNumber} ${secondNumber}`;
-  const correctAnswer = gcd(firstNumber, secondNumber).toString();
+  const correctAnswer = getGCD(firstNumber, secondNumber).toString();
   return [question, correctAnswer];
 };
 const condition = 'Find the greatest common divisor of given numbers.';
 const startGame = () => {
-  gameLogic(generatedData, condition);
+  letsPlay(generatedData, condition);
 };
 export default startGame;

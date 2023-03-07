@@ -1,5 +1,5 @@
 import getRandomNumber from '../getRandomNumber.js';
-import gameLogic from '../index.js';
+import letsPlay from '../index.js';
 
 const isPrime = (num) => {
   if (num < 2) {
@@ -19,6 +19,6 @@ const generatedData = () => {
 };
 const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const startGame = () => {
-  gameLogic(generatedData, condition);
+  letsPlay(generatedData, condition);
 };
 export default startGame;

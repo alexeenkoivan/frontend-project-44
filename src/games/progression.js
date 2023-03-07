@@ -1,8 +1,8 @@
 import getRandomNumber from '../getRandomNumber.js';
-import gameLogic from '../index.js';
+import letsPlay from '../index.js';
 
 const progressionLength = 10;
-const progression = () => {
+const getProgression = () => {
   const result = [];
   const stepOfProgression = getRandomNumber(2, 5);
   const beginNumber = getRandomNumber();
@@ -12,7 +12,7 @@ const progression = () => {
   return result;
 };
 const generatedData = () => {
-  const result = progression();
+  const result = getProgression();
   const hiddenIndex = getRandomNumber(0, progressionLength);
   const correctAnswer = String(result[hiddenIndex]);
   result[hiddenIndex] = '..';
@@ -21,6 +21,6 @@ const generatedData = () => {
 };
 const condition = 'What number is missing in the progression?';
 const startGame = () => {
-  gameLogic(generatedData, condition);
+  letsPlay(generatedData, condition);
 };
 export default startGame;

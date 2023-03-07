@@ -1,11 +1,12 @@
 import readlineSync from 'readline-sync';
 
-const gameLogic = (generatedData, condition) => {
+const letsPlay = (generatedData, condition) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name?');
   console.log(`Hello, ${userName}!`);
   console.log(condition);
-  for (let i = 0; i < 3; i += 1) {
+  const numberOfRounds = 3;
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const [question, correctAnswer] = generatedData();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
@@ -19,4 +20,4 @@ const gameLogic = (generatedData, condition) => {
   }
   console.log(`Congratulations, ${userName}!`);
 };
-export default gameLogic;
+export default letsPlay;
